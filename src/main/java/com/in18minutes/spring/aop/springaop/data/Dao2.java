@@ -1,4 +1,4 @@
-package com.in18minutes.spring.aop.springaop;
+package com.in18minutes.spring.aop.springaop.data;
 
 import org.springframework.stereotype.Repository;
 
