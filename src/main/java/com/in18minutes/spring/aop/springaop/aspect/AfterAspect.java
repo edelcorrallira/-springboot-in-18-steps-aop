@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 
-//AOP
 @Aspect
 @Configuration
 public class AfterAspect {
@@ -21,9 +20,9 @@ public class AfterAspect {
 	}
 
 	//No exceptions are currently thrown, this is an illustrative example only
-	@AfterThrowing(value="execution(* com.in18minutes.spring.aop.springaop.business.*.*(..))",
-			throwing="result")
-	public void afterThrowing(JoinPoint joinPoint, Object exception) {
-		logger.info("{} returned with value {}", joinPoint, exception);
-	}
+//	@AfterThrowing(value="execution(* com.in18minutes.spring.aop.springaop.business.*.*(..))",
+//			throwing="result")
+//	public void afterThrowing(JoinPoint joinPoint, Object exception) {
+//		logger.info("{} returned with value {}", joinPoint, exception);
+//	}
 }
