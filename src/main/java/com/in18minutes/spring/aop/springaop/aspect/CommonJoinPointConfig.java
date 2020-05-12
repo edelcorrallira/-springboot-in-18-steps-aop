@@ -21,7 +21,10 @@ public class CommonJoinPointConfig {
 	public void beanContainingDaoExecution() {}
 	
 	//All calls within layer
-	@Pointcut("within(com.in18minutes.spring.aop.springaop.data..*")
+	@Pointcut("within(com.in18minutes.spring.aop.springaop.data..*)")
 	public void allWithinDataLayerExecutionWithWithin() {}
 
+	//Custom annotation
+	@Pointcut("@annotation(com.in18minutes.spring.aop.springaop.aspect.TrackTime)")
+	public void trackTimeAnnotation() {}
 }
