@@ -13,14 +13,14 @@ import org.springframework.context.annotation.Configuration;
 public class AfterAspect {
 	Logger logger = LoggerFactory.getLogger(UseAccessAspect.class);
 	
-	@AfterReturning(value="execution(* com.in18minutes.spring.aop.springaop.business.*.*(..))",
+	@AfterReturning(value="com.in18minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()",
 			returning="result")
 	public void afterReturning(JoinPoint joinPoint, Object result) {
 		logger.info("{} returned with value {}", joinPoint, result);
 	}
 
 	//No exceptions are currently thrown, this is an illustrative example only
-//	@AfterThrowing(value="execution(* com.in18minutes.spring.aop.springaop.business.*.*(..))",
+//	@AfterThrowing(value=com.in18minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()",
 //			throwing="result")
 //	public void afterThrowing(JoinPoint joinPoint, Object exception) {
 //		logger.info("{} returned with value {}", joinPoint, exception);

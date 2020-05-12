@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 public class MehtodExecutionCalculatingAspect {
 	Logger logger = LoggerFactory.getLogger(UseAccessAspect.class);
 
-	@Around("execution(* com.in18minutes.spring.aop.springaop.business.*.*(..))")
+	@Around("com.in18minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
 	public void around(ProceedingJoinPoint joinPoint) throws Throwable {//Allows you to continue the execution of the method
 		//Start time
 		long startTime = System.currentTimeMillis();
