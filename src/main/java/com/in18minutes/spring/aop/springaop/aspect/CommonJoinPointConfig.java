@@ -11,4 +11,17 @@ public class CommonJoinPointConfig {
 	
 	@Pointcut("execution(* com.in18minutes.spring.aop.springaop.*.*(..))")
 	public void mainLayerExecution() {}
+	
+	@Pointcut("execution(* com.in18minutes.spring.aop.springaop.data.*.*(..)) &&"
+			+ "execution(* com.in18minutes.spring.aop.springaop.business.*.*(..))")
+	public void businessAndDataLayerExecution() {}
+	
+	//Regular expression inside parenthesis matching any beans containing "dao" 
+	@Pointcut("bean(*dao)*")
+	public void beanContainingDaoExecution() {}
+	
+	//All calls within layer
+	@Pointcut("within(com.in18minutes.spring.aop.springaop.data..*")
+	public void allWithinDataLayerExecutionWithWithin() {}
+
 }
