@@ -14,7 +14,6 @@ public class UseAccessAspect {
 	Logger logger = LoggerFactory.getLogger(BeforeAspect.class);
 	@Before("execution(* com.in18minutes.spring.aop.springaop.business.*.*(..))")
 	public void before(JoinPoint joinPoint) {
-		//In this case, access to this business layer package is determined at this point
 		logger.info(" Check for user access ");
 		logger.info(" Allowed execution for {}", joinPoint);
 	}

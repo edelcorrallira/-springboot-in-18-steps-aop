@@ -12,10 +12,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BeforeAspect {
 	Logger logger = LoggerFactory.getLogger(UseAccessAspect.class);
-	//Intercept all calls inside package ...springaop
 	@Before("execution(* com.in18minutes.spring.aop.springaop..*.*(..))")
 	public void before(JoinPoint joinPoint) {
-		//This logic is called Advice
 		logger.info("Intercepted Method Calls -> {}", joinPoint);
 	}
 }
